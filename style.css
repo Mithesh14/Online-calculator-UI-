@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'quicksand', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+    overflow: hidden;
+}
+
+body::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#e91e63,#ffc107);
+    clip-path : circle(20% at 30% 20%);
+}
+
+
+.bubbles{
+    position: absolute;
+    bottom: -120px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .bubbles span{
+    height: 60px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    animation: move 10s linear infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  @keyframes move {
+    100%{
+      transform: translateY(-100vh);
+    }
+  }
+  .bubbles span.one{
+    animation-delay: 2.2s;
+    transform: scale(2.15)
+  }
+  .bubbles span.two{
+    animation-delay: 3.5s;
+    transform: scale(1.55)
+  }
+  .bubbles span.three{
+    animation-delay: 0.2s;
+    transform: scale(0.35)
+  }
+  .bubbles span.four{
+    animation-delay: 6s;
+    transform: scale(2.15)
+  }
+  .bubbles span.five{
+    animation-delay: 7s;
+    transform: scale(0.5)
+  }
+  .bubbles span.six{
+    animation-delay: 4s;
+    transform: scale(2.5)
+  }
+  .bubbles span.seven{
+    animation-delay: 3s;
+    transform: scale(1.5)
+  }
+  .bubbles span:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 40%;
+    transform: skew(45deg) translateX(150px);
+    background: rgba(255, 255, 255, 0.15);
+    animation: mirror 3s linear infinite;
+  }
+  @keyframes mirror {
+    100%{
+      transform: translateX(-450px);
+    }
+  }
+  .bubbles span.one:before{
+    animation-delay: 1.5s;
+  }
+  .bubbles span.two:before{
+    animation-delay: 3.5s;
+  }
+  .bubbles span.three:before{
+    animation-delay: 2.5s;
+  }
+  .bubbles span.four:before{
+    animation-delay: 7.5s;
+  }
+  .bubbles span.five:before{
+    animation-delay: 4.5s;
+  }
+  .bubbles span.six:before{
+    animation-delay: 0.5s;
+  }
+  .bubbles span.seven:before{
+    animation-delay: 6s;
+  }
+body::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffff, #da00ff);
+    clip-path : circle(20% at 70% 90%);
+}
+
+.container
+{
+    position:relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px solid rgba(0,0,0,0.2);
+}
+.container .calculator
+{
+    position: relative;
+    display: grid;
+}
+.container .calculator .value
+{
+    grid-column: span 4;
+    height: 150px;
+    width: 300px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 30px;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+.container .calculator span
+{
+   display: grid;
+   height: 75px;
+   width: 75px;
+   color: #fff;
+   place-items: center;
+   font-weight: 400;
+   cursor: pointer;
+   font-size: 20px;
+   user-select: none;
+   border-bottom: 1px solid rgba(255,255,255,0.05);
+   border-right: 1px solid rgba(255,255,255,0.05);
+   transition: 0.5%;
+}
+
+.container .calculator span:hover
+{
+    transition: 0;
+    background: rgba(255,255,255,0.05);
+}
+
+.container .calculator span:active
+{
+    background: #14ff47;
+    color: #192f00;
+    font-size: 500;
+    font-weight: 500;
+}
+.container .calculator .clear
+{
+    grid-column: span 2;
+    width: 150px;
+}
+.container .calculator .plus
+{
+    grid-row: span 2;
+    height: 150px;
+}
+.equal
+{
+    background: rgba(255,255,255,0.05);
+}
+.datetime{
+  color: #fff;
+  background: transparent;
+  font-family: "Segoe UI", sans-serif;
+  box-align: right;
+  -moz-box-align: right;
+  width: 240px;
+  padding: 15px 10px;
+  transition: 0.5s;
+  transition-property: background, box-shadow;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+}
+
+.datetime:hover{
+  background: #2E94E3;
+  box-shadow: 0 0 30px #2E94E3;
+}
+
+.date{
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.time{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time span:not(:last-child){
+  position: relative;
+  margin: 0 6px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.time span:last-child{
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+
+.mithesh
+{
+  font-size: 30px;
+  font-family: "Segoe UI", sans-serif;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  color: #2E94E3;  color: #fff;
+  background: transparent;
+  font-family: "Segoe UI", sans-serif;
+  box-align: right;
+  -moz-box-align: right;
+  width: 300px;
+  padding: 15px 10px;
+  transition: 0.5s;
+  transition-property: background, box-shadow;
+
+}
+
+.mithesh:hover{
+  background: #2E94E3;
+  box-shadow: 0 0 30px #2E94E3;
+}
