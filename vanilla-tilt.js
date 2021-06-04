@@ -1,13 +1,6 @@
 var VanillaTilt = (function () {
 'use strict';
 
-/**
- * Created by Sergiu Șandor (micku7zu) on 1/27/2017.
- * Original idea: https://github.com/gijsroge/tilt.js
- * MIT License.
- * Version 1.7.0
- */
-
 class VanillaTilt {
   constructor(element, settings = {}) {
     if (!(element instanceof Node)) {
@@ -20,8 +13,6 @@ class VanillaTilt {
     this.clientHeight = null;
     this.left = null;
     this.top = null;
-
-    // for Gyroscope sampling
     this.gammazero = null;
     this.betazero = null;
     this.lastgammazero = null;
@@ -317,14 +308,8 @@ class VanillaTilt {
     this.updateCall = null;
   }
 
-  /**
-   * Appends the glare element (if glarePrerender equals false)
-   * and sets the default style
-   */
   prepareGlare() {
-    // If option pre-render is enabled we assume all html/css is present for an optimal glare effect.
     if (!this.glarePrerender) {
-      // Create glare element
       const jsTiltGlare = document.createElement("div");
       jsTiltGlare.classList.add("js-tilt-glare");
 
