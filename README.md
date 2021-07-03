@@ -6,5 +6,6 @@ To clone this project :
 git clone "https://github.com/mithesh14/Online-calculator-UI.git"
 ```
 
-## Demo link
+# Project link
+
 [Online calculator](https://onlinecalculatorbymithesh.netlify.app/)
